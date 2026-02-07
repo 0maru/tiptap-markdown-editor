@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+/* ProseMirror Editor Styles */
+.prose-editor .tiptap {
+  outline: none;
+  min-height: 100%;
+}
+
+.prose-editor .tiptap > * + * {
+  margin-top: 0.75em;
+}
+
+/* Headings */
+.prose-editor .tiptap h1 {
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose-editor .tiptap h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 1.25em;
+  margin-bottom: 0.4em;
+}
+
+.prose-editor .tiptap h3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+}
+
+.prose-editor .tiptap h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-top: 0.75em;
+  margin-bottom: 0.25em;
+}
+
+/* Paragraph */
+.prose-editor .tiptap p {
+  line-height: 1.7;
+}
+
+/* Links */
+.prose-editor .tiptap a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-editor .tiptap a:hover {
+  color: #1d4ed8;
+}
+
+/* Bold / Italic / Strike */
+.prose-editor .tiptap strong {
+  font-weight: 700;
+}
+
+.prose-editor .tiptap em {
+  font-style: italic;
+}
+
+.prose-editor .tiptap s {
+  text-decoration: line-through;
+}
+
+/* Inline Code */
+.prose-editor .tiptap code {
+  background-color: #f3f4f6;
+  border-radius: 0.25rem;
+  padding: 0.15em 0.4em;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  color: #dc2626;
+}
+
+/* Code Block */
+.prose-editor .tiptap pre {
+  background-color: #1e293b;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.prose-editor .tiptap pre code {
+  background: none;
+  color: #e2e8f0;
+  padding: 0;
+  font-size: 0.875em;
+  border-radius: 0;
+}
+
+/* Blockquote */
+.prose-editor .tiptap blockquote {
+  border-left: 4px solid #d1d5db;
+  padding-left: 1em;
+  margin: 1em 0;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Lists */
+.prose-editor .tiptap ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.prose-editor .tiptap ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.prose-editor .tiptap li {
+  margin: 0.25em 0;
+  line-height: 1.6;
+}
+
+.prose-editor .tiptap li > ul,
+.prose-editor .tiptap li > ol {
+  margin: 0.25em 0;
+}
+
+/* Task List */
+.prose-editor .tiptap ul[data-type="taskList"] {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prose-editor .tiptap ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+.prose-editor .tiptap ul[data-type="taskList"] li > label {
+  flex-shrink: 0;
+  margin-top: 0.25em;
+}
+
+.prose-editor .tiptap ul[data-type="taskList"] li > label input[type="checkbox"] {
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  accent-color: #2563eb;
+}
+
+.prose-editor .tiptap ul[data-type="taskList"] li > div {
+  flex: 1;
+}
+
+/* Horizontal Rule */
+.prose-editor .tiptap hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 1.5em 0;
+}
+
+/* Image */
+.prose-editor .tiptap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1em 0;
+}
+
+/* Table */
+.prose-editor .tiptap table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+}
+
+.prose-editor .tiptap th,
+.prose-editor .tiptap td {
+  border: 1px solid #d1d5db;
+  padding: 0.5em 0.75em;
+  text-align: left;
+  vertical-align: top;
+  min-width: 80px;
+}
+
+.prose-editor .tiptap th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.prose-editor .tiptap td {
+  background-color: #ffffff;
+}
+
+/* Placeholder */
+.prose-editor .tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #9ca3af;
+  pointer-events: none;
+  height: 0;
+}
+
+/* Lowlight syntax highlighting */
+.prose-editor .tiptap pre .hljs-comment,
+.prose-editor .tiptap pre .hljs-quote {
+  color: #616161;
+}
+
+.prose-editor .tiptap pre .hljs-variable,
+.prose-editor .tiptap pre .hljs-template-variable,
+.prose-editor .tiptap pre .hljs-attribute,
+.prose-editor .tiptap pre .hljs-tag,
+.prose-editor .tiptap pre .hljs-regexp,
+.prose-editor .tiptap pre .hljs-link,
+.prose-editor .tiptap pre .hljs-name,
+.prose-editor .tiptap pre .hljs-selector-id,
+.prose-editor .tiptap pre .hljs-selector-class {
+  color: #f98181;
+}
+
+.prose-editor .tiptap pre .hljs-number,
+.prose-editor .tiptap pre .hljs-meta,
+.prose-editor .tiptap pre .hljs-built_in,
+.prose-editor .tiptap pre .hljs-builtin-name,
+.prose-editor .tiptap pre .hljs-literal,
+.prose-editor .tiptap pre .hljs-type,
+.prose-editor .tiptap pre .hljs-params {
+  color: #fbbc88;
+}
+
+.prose-editor .tiptap pre .hljs-string,
+.prose-editor .tiptap pre .hljs-symbol,
+.prose-editor .tiptap pre .hljs-bullet {
+  color: #b9f18d;
+}
+
+.prose-editor .tiptap pre .hljs-title,
+.prose-editor .tiptap pre .hljs-section {
+  color: #faf594;
+}
+
+.prose-editor .tiptap pre .hljs-keyword,
+.prose-editor .tiptap pre .hljs-selector-tag {
+  color: #70cff8;
+}
+
+.prose-editor .tiptap pre .hljs-emphasis {
+  font-style: italic;
+}
+
+.prose-editor .tiptap pre .hljs-strong {
+  font-weight: 700;
+}
